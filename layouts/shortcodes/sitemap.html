@@ -1,0 +1,36 @@
+{{ $currentLanguage := .Site.Language.Lang }}
+{{ $rootFolder := "/content/" }}
+{{ $isMultiLanguage := ne (len .Site.Languages) 1 }}
+
+{{ if $isMultiLanguage }}
+    {{ $rootFolder = printf "%s%s/" $rootFolder $currentLanguage }}
+{{ end }}
+
+{{ $items := readDir $rootFolder }}
+{{ $files := slice }}
+{{ $folders := slice }}
+
+{{ range $item := $items }}
+    {{ if not $item.IsDir }}
+        {{ $fileName := replaceRE ".md" "" $item.Name }}
+        {{ $files = $files | append $fileName }}
+    {{ else if ne $item.Name "page" }}
+        {{ $folders = $folders | append $item }}
+    {{ end }}
+{{ end }}
+
+{{ range $fileName := $files }}
+    <li><a href="{{ if $isMultiLanguage }}{{ printf "/%s/%s" $currentLanguage $fileName }}{{ else }}{{ printf "/%s" $fileName }}{{ end }}">{{ $fileName }}</a></li>
+{{ end }}
+
+{{ range $folder := $folders }}
+    <h2>{{ $folder.Name }}</h2>
+    <ul>
+        {{ range $file := readDir (printf "%s%s/" $rootFolder $folder.Name) }}
+            {{ if eq (path.Ext $file.Name) ".md" }}
+                {{ $fileName := replaceRE ".md" "" $file.Name }}
+                <li><a href="{{ if $isMultiLanguage }}{{ printf "/%s/%s/%s" $currentLanguage $folder.Name $fileName }}{{ else }}{{ printf "/%s/%s" $folder.Name $fileName }}{{ end }}">{{ $fileName }}</a></li>
+            {{ end }}
+        {{ end }}
+    </ul>
+{{ end }}
