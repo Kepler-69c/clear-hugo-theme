@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/fonts/worksans-regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/fonts/worksans-bold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/fonts/worksans-black.woff2');
+    font-weight: 900;
+}
+
+/* Typography */
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  @media screen and (min-width: 500px) and (min-height: 500px) {
+    html, body {
+      font-size: 20px;
+    }
+  }
+  @media screen and (min-width: 1000px) and (min-height: 800px) {
+    html, body {
+      font-size: 22px;
+    }
+  }
+
+  :root {
+    --font-color: #241f31;
+    --darker-font-color: #5e5e5e;
+    --background-color: #fff;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --font-color: #e8e8e8;
+      --darker-font-color: #b7b7b7;
+      --background-color: #241f31;
+    }
+    .subtitle, .title, .notice {
+      color: #241f31;
+    }
+  }
+
+body {
+	color: var(--font-color);
+	background-color: var(--background-color);
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 10px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+a {
+  font-weight: 600;
+  text-decoration: none;
+  color: #26a269;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+b {
+  font-weight: 600;
+}
+ul {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  list-style: none;
+}
+ul {
+  padding-left: 0;
+}
+p, li {
+  margin-bottom: 1em;
+}
+hr {
+  width: 50%;
+  margin: 3em auto;
+  color: #333;
+}
+small {
+  color: var(--darker-font-color);
+}
+.image {
+  display: block;
+  width: 100%;
+  border-radius: 0.3rem;
+}

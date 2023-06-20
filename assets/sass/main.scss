@@ -217,4 +217,22 @@ small {
     text-align: center;
     padding: 5em 0 3em;
     font-size: 1em;
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+
+    div:nth-child(1), div:nth-child(1) {
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .social {
+        align-self: center;
+        justify-self: center;
+
+        li {
+            float: left;
+            margin: 0.5em;
+        }
+    }
   }

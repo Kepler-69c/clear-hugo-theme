@@ -1,0 +1,20 @@
+<footer>
+    <!-- copyright -->
+    <div>
+        <p>
+            {{ if (isset .Site.Params "copyright") }}
+              {{ .Site.Params.copyright | safeHTML }}
+            {{ else }}
+              © {{ .Site.Params.startYear }}-{{ dateFormat "2006" now }}
+              {{ .Site.Params.author }}.
+            {{ end }}
+            {{ if (isset .Site.Params "location") }}
+              <br> Built in {{ .Site.Params.location }}.
+            {{ end }}
+        </p>
+    </div>
+    <!-- social -->
+    <div class="social">
+        {{- partial "social.html" . -}}
+    </div>
+</footer>
