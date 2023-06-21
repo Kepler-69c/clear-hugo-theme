@@ -1,16 +1,5 @@
 // variables
-$font: #241f31;
-$fontD:  #e8e8e8;
-
-$fontDarker: #5e5e5e;
-$fontDarkerD: #b7b7b7;
-
-$background: #fff;
-$backgroundD: #241f31;
-
-$titleD: #241f31;
-
-$link: #26a269;
+@import "variables";
 
 @font-face {
     font-family: 'Work Sans';
@@ -228,9 +217,11 @@ header ul, footer ul {
 header {
     position: fixed;
     width: 100%;
+    top: 0;
     color: var(--font-color);
     // padding: 1em 2em 1em 0;
     padding: 1em 2em;
+    z-index: 999999;
 
     margin-left: auto;
     margin-right: auto;

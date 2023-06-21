@@ -1,3 +1,9 @@
 {{ define "main" }}
 
+<div class="filter"></div>
+<div>
+    <h1>{{ .Site.Params.introTitle | safeHTML}}</h1>
+    <h3>{{ .Site.Params.introSubtitle | safeHTML}}</h3>
+</div>
+
 {{ end }}
