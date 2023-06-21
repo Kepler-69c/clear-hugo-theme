@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ .Lang }}" itemscope itemtype="http://schema.org/WebPage">
   {{- partial "head.html" . -}}
-  <body class="">
+  <body>
     {{- partial "header.html" . -}}
-    <main class="">
+    <main>
     {{- block "main" . }}{{- end }}
     </main>
     {{- partial "footer.html" . -}}
+    {{- partial "scripts.html" . -}}
   </body>
 </html>

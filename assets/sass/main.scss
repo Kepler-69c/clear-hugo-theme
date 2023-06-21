@@ -46,27 +46,35 @@ $titleD: #241f31;
     html, body {
       font-size: 20px;
     }
+
+    footer {
+        grid-template-columns: auto;
+    }
   }
   @media screen and (min-width: 1000px) and (min-height: 800px) {
     html, body {
       font-size: 22px;
     }
+
+    footer {
+        grid-template-columns: auto;
+    }
   }
 
   :root {
-    --font-color: $font;
-    --darker-font-color: $fontDarker;
-    --background-color: $background;
+    --font-color: #{$font};
+    --darker-font-color: #{$fontDarker};
+    --background-color: #{$background};
   }
   
   @media (prefers-color-scheme: dark) {
     :root {
-      --font-color: $fontD;
-      --darker-font-color: $fontDarkerD;
-      --background-color: $backgroundD;
+      --font-color: #{$fontD};
+      --darker-font-color: #{$fontDarkerD};
+      --background-color: #{$backgroundD};
     }
     .subtitle, .title, .notice {
-      color: $titleD;
+      color: #{$titleD};
     }
   }
 
@@ -210,8 +218,49 @@ small {
     border-radius: 0.3rem;
   }
   
-  /* Footer */
-  footer {
+/*  Header */
+header ul, footer ul {
+    margin: auto;
+}
+
+header {
+    color: var(--font-color);
+    padding: 1em 0;
+    font-size: 1em;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: auto auto;
+
+    a:nth-child(1) {
+        background-color: aliceblue;
+        height: 1em;
+    }
+
+    img {
+        max-height: 100%;
+    }
+
+    li {
+        float: left;
+        margin: 0.5em;
+
+        a {
+            color: var(--font-color);
+        }
+    }
+
+    svg {
+        display: block;
+        margin: auto;
+    }
+}
+
+
+/* Footer */
+footer {
     color: white;
     background-color: #241f31;
     text-align: center;
@@ -219,12 +268,10 @@ small {
     font-size: 1em;
 
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto;
+    margin-left: auto;
+    margin-right: auto;
 
-    div:nth-child(1), div:nth-child(1) {
-      grid-column-start: 2;
-      grid-column-end: 3;
-    }
 
     .social {
         align-self: center;
@@ -235,4 +282,10 @@ small {
             margin: 0.5em;
         }
     }
-  }
+}
+
+@media screen and (max-width:700px) {
+    footer {
+        grid-template-columns: auto;
+    }
+}
