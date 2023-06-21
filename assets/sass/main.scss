@@ -10,6 +10,8 @@ $backgroundD: #241f31;
 
 $titleD: #241f31;
 
+$link: #26a269;
+
 @font-face {
     font-family: 'Work Sans';
     src: url('/fonts/worksans-regular.woff2');
@@ -91,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   font-weight: 600;
   text-decoration: none;
-  color: #26a269;
+  color: $link;
   cursor: pointer;
 }
 a:hover {
@@ -224,9 +226,11 @@ header ul, footer ul {
 }
 
 header {
+    position: fixed;
+    width: 100%;
     color: var(--font-color);
-    padding: 1em 0;
-    font-size: 1em;
+    // padding: 1em 2em 1em 0;
+    padding: 1em 2em;
 
     margin-left: auto;
     margin-right: auto;
@@ -234,27 +238,25 @@ header {
     display: grid;
     grid-template-columns: auto auto;
 
-    a:nth-child(1) {
-        background-color: aliceblue;
-        height: 1em;
-    }
-
-    img {
-        max-height: 100%;
-    }
-
-    li {
-        float: left;
-        margin: 0.5em;
-
-        a {
-            color: var(--font-color);
+    .headerLogo {
+        line-height: 1;
+        
+        img {
+            height: 2em;
         }
     }
 
-    svg {
-        display: block;
-        margin: auto;
+
+    .linkGrid {
+        display: grid;
+        grid-auto-flow: column;
+        margin-left: auto;
+        column-gap: 2em;
+        align-items: center;
+
+        svg {
+            stroke: $link;
+        }
     }
 }
 
