@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div class="intro">
+    <div class="container">
+        <i class="intro-icon" data-feather="pen-tool"></i>
+        <h1>{{ .Title }}</h1>
+        {{ if (and (isset .Params "summary") (not (or .Site.Params.hideSummary .Params.hideSummary))) }}
+            <p>{{ .Params.summary }}</p>
+        {{ end }}
+        <p></p>
+    </div>
+</div>
+<article class="container">
+    {{ .Content }}
+</article>
+
+{{ end }}
