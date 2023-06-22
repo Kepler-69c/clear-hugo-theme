@@ -6,7 +6,7 @@ important
 - [ ] dark mode button
 - [ ] comment section for posts
 - [ ] footer links
-- [ ] post information
+- [x] post information
 - [ ] post list
 
 TODO (later): 

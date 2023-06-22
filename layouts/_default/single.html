@@ -1,15 +1,30 @@
 {{ define "main" }}
+    {{ $lastmodstr := (partial "date.html" (dict "date" .Lastmod  "format" "long")) }}
+    {{ $datestr := (partial "date.html" (dict "date" .Date "format" "long")) }}
 
 <div class="intro">
     <div class="container">
-        <i class="intro-icon" data-feather="pen-tool"></i>
+        <i class="introIcon" data-feather="pen-tool"></i>
+        <!-- title -->
         <h1>{{ .Title }}</h1>
+        <!-- subtitle -->
         {{ if (and (isset .Params "summary") (not (or .Site.Params.hideSummary .Params.hideSummary))) }}
             <p>{{ .Params.summary }}</p>
         {{ end }}
-        <p></p>
+        <!-- post information -->
+        {{ if not (or (or .Site.Params.hideMeta .Params.hideMeta) false) }}
+        <div class="postInfo">
+            <small class="caption" data-feather="calendar"></small>
+                <small class="caption">&nbsp; posted: {{ $datestr }} {{ if ne $datestr $lastmodstr }} &nbsp; (modified: {{ $lastmodstr }}) {{ end }} &nbsp;&bull;&nbsp;</small>
+            <small class="caption" data-feather="clock"></small>
+                <small class="caption">&nbsp; {{ .ReadingTime }} min &nbsp;&bull;&nbsp;</small>
+            <small class="caption" data-feather="info"></small>
+                <small class="caption">&nbsp; {{ .WordCount }} words</small>
+        </div>
+        {{ end }}
     </div>
 </div>
+<!-- content -->
 <article class="container">
     {{ .Content }}
 </article>
