@@ -1,5 +1,5 @@
 {{ if eq "long" .format }}
-    {{ .date.Format "January 2, 2006" }}
+    {{ .date.Format "2 January 2006" }}
 {{ else }}
-    {{ .date.Format "Jan 2, 06" }}
+    {{ .date.Format "2 Jan 06" }}
 {{ end }}

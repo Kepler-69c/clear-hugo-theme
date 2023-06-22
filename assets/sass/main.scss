@@ -281,23 +281,32 @@ footer {
 /* main */
 main {
     margin: 4em 0;
-
-    .introIcon {
-        height: 112px;
-        width: 112px;
-    }
+    min-height: 75vh;
 }
 
 /* post */
+.intro .introIcon {
+    height: 112px;
+    width: 112px;
+}
+
 .postInfo {
     display: flex;
     flex-direction: row;
     justify-content: center;
 
-    svg.caption {
-        stroke: var(--darker-font-color);
+    .caption {
+        white-space: nowrap;
+        stroke: $fontDarker;
+        color: $fontDarker;
     }
 }
+
+article ul {
+    list-style: initial;
+}
+
+/* list */
 
 
 @media screen and (max-width:700px) {
@@ -306,7 +315,6 @@ main {
     }
     .postInfo {
         flex-wrap: wrap;
-        
         .caption {
             margin: 0;
         }

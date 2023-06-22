@@ -7,12 +7,19 @@ important
 - [ ] comment section for posts
 - [ ] footer links
 - [x] post information
-- [ ] post list
+- [x] post list
+    - [ ] list subtitle/explanation
+    - [ ] Add option to see list as grid
+- [ ] responsive, lazy loaded images
+    - [ ] image captions
 
 TODO (later): 
-- footer > social > hover effect
-- sun icon too large (?)
-- change @import (deprecated) in stylesheet to @use
-- thumbnails in posts
-- index.html background dark mode
-- header box-shadow onScroll
+- [ ] footer > social > hover effect
+- [ ] sun icon too big (?)
+- [ ] change @import (deprecated) in stylesheet to @use
+- [ ] thumbnails in posts
+- [ ] index.html background dark mode
+- [ ] header box-shadow onScroll
+- [ ] list -> timeline
+- [ ] revise the date format
+- [ ] 
