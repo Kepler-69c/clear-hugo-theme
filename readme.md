@@ -3,7 +3,7 @@ Clear is a minimalistic monolingual hugo theme.
 
 ## TODO
 important
-- [ ] dark mode button
+- [x] dark mode button
 - [ ] comment section for posts
 - [ ] footer links
 - [x] post information
@@ -12,6 +12,7 @@ important
     - [ ] Add option to see list as grid
 - [ ] responsive, lazy loaded images
     - [ ] image captions
+- [ ] dynamic post icons
 
 TODO (later): 
 - [ ] footer > social > hover effect

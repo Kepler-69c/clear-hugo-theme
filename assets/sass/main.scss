@@ -246,8 +246,21 @@ header {
         column-gap: 2em;
         align-items: center;
 
-        svg {
-            stroke: $link;
+        button {
+            background: none;
+            border: none;
+            padding: 0;
+            height: 24px;
+            width: 24px;
+
+            svg {
+                stroke: $link;
+                transition: .4s;
+            }
+        }
+
+        button:hover svg {
+            stroke: var(--font-color);
         }
     }
 }
