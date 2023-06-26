@@ -11,6 +11,7 @@ last_modified_at:
 tags: ["", ""]
 
 # thumbnail
+icon: question.svg # should be placed in the /static/icons/ dir
 thumbnail: /example.png
 caption "caption for the thumbnail"
 

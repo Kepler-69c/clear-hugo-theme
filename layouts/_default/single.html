@@ -4,7 +4,22 @@
 
 <div class="intro">
     <div class="container">
-        <i class="introIcon" data-feather="pen-tool"></i>
+        <!-- icon -->
+        {{ $iconPath := .Params.icon }}
+
+        {{ $iconExists := false }}
+        {{ range $icon := readDir "/static/icons" }}
+            {{ if eq $icon.Name (print $iconPath ".svg") }}
+                {{ $iconExists = true }}
+                <img class="introIcon" src="/icons/{{ $icon.Name }}" alt="Icon">
+            {{ end }}
+        {{ end }}
+
+        {{ if not $iconExists }}
+            <i class="introIcon" data-feather="{{ $iconPath }}"></i>
+        {{ end }}
+
+        <!-- <i class="introIcon" data-feather="pen-tool"></i> -->
         <!-- title -->
         <h1>{{ .Title }}</h1>
         <!-- subtitle -->
