@@ -319,9 +319,11 @@ article ul {
     list-style: initial;
 }
 
+.giscus {
+  padding-top: 4em;
+}
+
 /* list */
-
-
 @media screen and (max-width:700px) {
     footer {
         grid-template-columns: auto;

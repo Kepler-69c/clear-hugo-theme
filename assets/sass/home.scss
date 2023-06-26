@@ -9,6 +9,10 @@
     backdrop-filter: invert(1);
 }
 
+header {
+    background: transparent;
+}
+
 main {
     height: 100vh;
     background-image: url(/noise_texture.png);

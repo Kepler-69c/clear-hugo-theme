@@ -4,10 +4,10 @@ Clear is a minimalistic monolingual hugo theme.
 ## TODO
 important
 - [x] dark mode button
-- [ ] comment section for posts
+- [x] comment section for posts
 - [ ] footer links
 - [x] post information
-- [x] post list
+- [-] post list
     - [x] list subtitle/explanation
     - [ ] Add option to see list as grid
 - [ ] responsive, lazy loaded images
