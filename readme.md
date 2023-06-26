@@ -13,6 +13,7 @@ important
 - [ ] responsive, lazy loaded images
     - [ ] image captions
 - [x] custom post icons
+- [ ] improve table and blockquote style
 
 TODO (later): 
 - [ ] footer > social > hover effect
@@ -25,4 +26,3 @@ TODO (later):
 - [ ] revise the date format
 - [ ] fix footnote backlink
 - [ ] fix image scaling & size
-- [ ] improve table and blockquote style

@@ -7,6 +7,10 @@
         <!-- icon -->
         {{ $iconPath := .Params.icon }}
 
+        {{ if not $iconPath }}
+            {{ $iconPath = "pen-tool" }}
+        {{ end }}
+
         {{ $iconExists := false }}
         {{ range $icon := readDir "/static/icons" }}
             {{ if eq $icon.Name (print $iconPath ".svg") }}
@@ -19,7 +23,6 @@
             <i class="introIcon" data-feather="{{ $iconPath }}"></i>
         {{ end }}
 
-        <!-- <i class="introIcon" data-feather="pen-tool"></i> -->
         <!-- title -->
         <h1>{{ .Title }}</h1>
         <!-- subtitle -->
