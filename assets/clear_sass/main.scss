@@ -56,6 +56,7 @@
     --font-color: #{$font};
     --darker-font-color: #{$fontDarker};
     --background-color: #{$background};
+    --quote-color: #{$blockquote};
   }
   
   @media (prefers-color-scheme: dark) {
@@ -63,6 +64,7 @@
       --font-color: #{$fontD};
       --darker-font-color: #{$fontDarkerD};
       --background-color: #{$backgroundD};
+      --quote-color: #{$blockquoteD};
     }
     .subtitle, .title, .notice {
       color: #{$titleD};
@@ -109,6 +111,11 @@ hr {
 }
 small {
   color: var(--darker-font-color);
+}
+blockquote{
+  background-color: var(--quote-color);
+  padding-left: 1em;
+  border-left: 2px solid var(--font-color);
 }
 .image {
   display: block;
@@ -317,6 +324,7 @@ main {
 
 article ul {
     list-style: initial;
+    padding-left: 40px;
 }
 
 .giscus {

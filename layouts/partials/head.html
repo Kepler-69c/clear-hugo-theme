@@ -17,11 +17,11 @@
     
     {{ hugo.Generator }}
 
-    {{  $mainCSS := resources.Get "sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
+    {{  $mainCSS := resources.Get "clear_sass/main.scss" | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $mainCSS.Permalink }}" integrity="{{ $mainCSS.Data.Integrity }}">
   
     {{ if .IsHome }}
-    {{  $homeCSS := resources.Get "sass/home.scss" | resources.ToCSS | resources.Fingerprint }}
+    {{  $homeCSS := resources.Get "clear_sass/home.scss" | resources.ToCSS | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $homeCSS.Permalink }}" integrity="{{ $homeCSS.Data.Integrity }}">
     {{ end }}
 
