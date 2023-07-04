@@ -1,7 +1,7 @@
 {
   "name": "clear",
-  "version": "0.1.0",
-  "description": "Clear is a minimalistic hugo theme by Kepler-69c",
+  "version": "0.2.6",
+  "description": "Clear is a minimalist hugo theme by Kepler-69c",
   "main": "index.js",
   "repository": "https://github.com/Kepler-69c/clear-hugo-theme",
   "author": "Kepler-69c",

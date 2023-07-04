@@ -6,7 +6,7 @@
   <script>
     (function() {
     var d = document, s = d.createElement('script');
-    s.src = 'https://larnsce.disqus.com/embed.js';
+    s.src = 'https://{{ .Site.Params.comments.disqusShortname }}.disqus.com/embed.js';
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     })();
@@ -14,25 +14,26 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   {{ else if eq .Site.Params.comments.system "giscus" }}
   <script src="https://giscus.app/client.js"
-    data-repo="{{ .Site.Params.comments.repo }}"
-    data-repo-id="{{ .Site.Params.comments.repoid }}"
-    data-category="{{ .Site.Params.comments.category }}"
-    data-category-id="{{ .Site.Params.comments.categoryid }}"
-    data-mapping="{{ default "pathname" .Site.Params.comments.mapping }}"
-    data-strict="{{ default "0" .Site.Params.comments.strict }}"
-    data-reactions-enabled="{{ default "1" .Site.Params.comments.reactionsenabled }}"
-    data-emit-metadata="{{ default "0" .Site.Params.comments.emitmetadata }}"
-    data-input-position="{{ default "bottom" .Site.Params.comments.inputposition }}"
-    data-theme="{{ default "preferred_color_scheme" .Site.Params.comments.theme }}"
+    data-repo="{{ .Site.Params.comments.giscusRepo }}"
+    data-repo-id="{{ .Site.Params.comments.giscusRepoid }}"
+    data-category="{{ .Site.Params.comments.giscusCategory }}"
+    data-category-id="{{ .Site.Params.comments.giscusCategoryid }}"
+    data-mapping="{{ default "pathname" .Site.Params.comments.giscusMapping }}"
+    data-strict="{{ default "0" .Site.Params.comments.giscusStrict }}"
+    data-reactions-enabled="{{ default "1" .Site.Params.comments.giscusReactionsenabled }}"
+    data-emit-metadata="{{ default "0" .Site.Params.comments.giscusEmitmetadata }}"
+    data-input-position="{{ default "bottom" .Site.Params.comments.giscusInputposition }}"
+    data-theme="{{ default "preferred_color_scheme" .Site.Params.comments.giscusTheme }}"
     data-lang="{{ default "en" $.Site.Language.Lang }}"
     crossorigin="anonymous"
     async>
   </script>
   {{ else if eq .Site.Params.comments.system "utterances" }}
   <script src="https://utteranc.es/client.js"
-    repo="{{ .Site.Params.comments.repo }}"
-    issue-term="{{ default "pathname" .Site.Params.comments.issueterm }}"
-    theme="{{ default "preferred_color_scheme" .Site.Params.comments.theme }}"
+    repo="{{ .Site.Params.comments.utterancesRepo }}"
+    issue-term="{{ default "pathname" .Site.Params.comments.utterancesIssueterm }}"
+    label="{{ default "utterances" .Site.Params.comments.utterancesLabel }}"
+    theme="{{ default "preferred_color_scheme" .Site.Params.comments.utterancesTheme }}"
     crossorigin="anonymous"
     async>
   </script>

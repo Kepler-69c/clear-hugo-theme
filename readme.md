@@ -1,8 +1,8 @@
 # Clear
-Clear is a minimalistic monolingual hugo theme.
+Clear is a minimalist monolingual hugo theme.
 
 ## TODO
-important (6/12)
+important (7/13)
 - [x] dark mode button
 - [x] comment section for posts
 - [x] footer links
@@ -35,5 +35,5 @@ minor things (1/12)
 | Comments   | Implemented | Tested |
 | ---------- | ----------- | ------ |
 | Giscus     | ✔︎           | ✔︎      |
-| Disqus     | ✔︎           |        |
-| Utterances |             |        |
+| Disqus     | ✔︎           | ✔︎      |
+| Utterances | ✔︎           | ✔︎      |
