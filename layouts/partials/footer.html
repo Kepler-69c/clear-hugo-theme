@@ -1,3 +1,11 @@
+<div class="emphasis">
+  <div class="linkGrid">
+    {{ range .Site.Menus.footer }}
+    <a href="{{ .URL | relLangURL }}" class="text-center hover:underline">{{ .Name }}</a>
+    {{ end }}
+  </div>
+
+</div>
 <footer>
     <!-- copyright -->
     <div>

@@ -15,7 +15,10 @@
         {{ range $icon := readDir "/static/icons" }}
             {{ if eq $icon.Name (print $iconPath ".svg") }}
                 {{ $iconExists = true }}
-                <img class="introIcon" src="/icons/{{ $icon.Name }}" alt="Icon">
+                {{$svg := print "/static/icons/" $icon.Name }}
+                <div class="introIcon">
+                    {{ $svg  | readFile | safeHTML }}
+                </div>
             {{ end }}
         {{ end }}
 
@@ -48,6 +51,8 @@
 </article>
 
 <!-- comments -->
-{{- partial "comments.html" . -}}
+{{ if not (or (or .Site.Params.hideComments .Params.hideComments) false) }}
+    {{- partial "comments.html" . -}}
+{{ end }}
 
 {{ end }}

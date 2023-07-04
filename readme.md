@@ -5,7 +5,7 @@ Clear is a minimalistic monolingual hugo theme.
 important (6/12)
 - [x] dark mode button
 - [x] comment section for posts
-- [ ] footer links
+- [x] footer links
 - [x] post information
 - [x] post list
     - [x] list subtitle/explanation
@@ -15,8 +15,9 @@ important (6/12)
     - [ ] fix image scaling & size
 - [x] custom post icons
 - [ ] improve table and blockquote style
+- [ ] search
 
-minor things (0/12)
+minor things (1/12)
 - [ ] footer > social > hover effect
 - [ ] dark mode icon too big (?)
 - [ ] change @import (deprecated) in stylesheet to @use
@@ -28,10 +29,11 @@ minor things (0/12)
 - [ ] fix footnote backlink
 - [ ] test if utterances plugin really works
 - [ ] giscus dynamic theme changing unreliable
-- [ ] post icons color
+- [x] post icons color
 
 ## Comment systems
-| Comments | Implemented | Tested |
-| -------- | ----------- | ------ |
-| Giscus   | ✔︎           | ✔︎      |
-| Disqus   | ✔︎           |        |
+| Comments   | Implemented | Tested |
+| ---------- | ----------- | ------ |
+| Giscus     | ✔︎           | ✔︎      |
+| Disqus     | ✔︎           |        |
+| Utterances |             |        |

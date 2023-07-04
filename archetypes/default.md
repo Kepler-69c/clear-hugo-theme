@@ -18,5 +18,12 @@ caption "caption for the thumbnail"
 # hide?
 draft: true
 
+hideComments: false
+hideMeta: false
+hideSummary: false
+#hidePageThumbnail = false (not yet implemented)
+#hideThumbnailCaption = false (not yet implemented)
+#hideotherLang: false (not implemented)
+
 ---
 

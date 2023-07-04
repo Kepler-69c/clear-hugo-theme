@@ -187,17 +187,17 @@ blockquote{
       margin: 0.5rem 1rem 0.5rem 0;
     }
   }
-  
-  .join {
+
+  .emphasis {
     background-color: #3d3846;
     color: white;
     margin: 5rem 0 0;
-    padding: 2rem 0 6rem;
+    padding: 2rem 0; /*2rem 0 6rem*/
   }
-  .join h2 {
+  .emphasis h2 {
     margin-top: 3rem;
   }
-  .join a,
+  .emphasis a,
   footer a {
     color: #57e389;
   }
@@ -298,6 +298,21 @@ footer {
     }
 }
 
+.emphasis .linkGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 720px;
+  justify-items: center;
+
+  a {
+    padding: 0.5em 0;
+  }
+}
+
 /* main */
 main {
     margin: 4em 0;
@@ -305,7 +320,7 @@ main {
 }
 
 /* post */
-.intro .introIcon {
+.intro .introIcon, .intro .introIcon svg {
     height: 112px;
     width: 112px;
 }
@@ -341,5 +356,8 @@ article ul {
         .caption {
             margin: 0;
         }
+    }
+    .emphasis .linkGrid {
+      grid-template-columns: repeat(2, minmax(0,1fr));
     }
 }
