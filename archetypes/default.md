@@ -15,8 +15,9 @@ icon: question.svg # should be placed in the /static/icons/ dir
 thumbnail: /example.png
 caption "caption for the thumbnail"
 
-# hide?
+# hide / page settings
 draft: true
+math: false
 
 hideComments: false
 hideMeta: false

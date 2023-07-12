@@ -114,8 +114,9 @@ small {
 }
 blockquote{
   background-color: var(--quote-color);
-  padding-left: 1em;
+  padding: .5em 0 .5em 1em;
   border-left: 2px solid var(--font-color);
+  border-radius: .3rem;
 }
 .image {
   display: block;
@@ -216,6 +217,20 @@ blockquote{
     border-radius: 0.3rem;
   }
   
+/* codeblock, table */
+.highlight pre {
+  padding: .5em;
+  border-radius: .3rem;
+}
+
+table, th, td {
+  border: 1px solid var(--font-color);
+  border-collapse: collapse;
+  padding: .3em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*  Header */
 header ul, footer ul {
     margin: auto;
@@ -294,6 +309,19 @@ footer {
         li {
             float: left;
             margin: 0.5em;
+
+            a::after{
+              content: "";
+              display: block;
+              position: relative;
+              width: 100%;
+              height: 2px;
+              bottom: 10px;
+            }
+
+            a:hover:after {
+              background-color:#57e389;
+            }
         }
     }
 }
@@ -347,6 +375,16 @@ article ul {
 }
 
 /* list */
+.pagination {
+  display: grid;
+  grid-auto-flow: column;
+  justify-items: center;
+  column-gap: 1em;
+}
+
+
+/* @media */
+
 @media screen and (max-width:700px) {
     footer {
         grid-template-columns: auto;
