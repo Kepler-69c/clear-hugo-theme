@@ -10,7 +10,12 @@ $backgroundD: #241f31;
 
 $titleD: #241f31;
 
-$link: #26a269;
+//$theme: #692ec2;
+//$theme: #2ec27e; //#692ec2
+//$link: #26a269;
+
+$theme: #2ec27e;
+$link: darken($theme, 8); // still not perfect
 
 $blockquote: #D7D5C9;
 $blockquoteD: #282A36;

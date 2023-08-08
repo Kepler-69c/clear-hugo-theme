@@ -18,8 +18,8 @@ important (9/14)
 - [ ] search
 - [ ] mobile ui -> transform header to menu
 
-minor things (4/11)
-- [ ] footer > social > hover effect
+minor things (5/11)
+- [x] footer > social > hover effect
 - [x] dark mode icon too big (?)
 - [ ] change @import (deprecated) in stylesheet to @use
 - [ ] index.html background dark mode
