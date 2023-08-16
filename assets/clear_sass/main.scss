@@ -1,5 +1,5 @@
 // variables
-@import "variables";
+@use "variables" as v;
 
 @font-face {
     font-family: 'Work Sans';
@@ -53,21 +53,24 @@
   }
 
   :root {
-    --font-color: #{$font};
-    --darker-font-color: #{$fontDarker};
-    --background-color: #{$background};
-    --quote-color: #{$blockquote};
+    --theme: #{v.$theme};
+    --link: #{v.$link};
+
+    --font-color: #{v.$font};
+    --darker-font-color: #{v.$fontDarker};
+    --background-color: #{v.$background};
+    --quote-color: #{v.$blockquote};
   }
   
   @media (prefers-color-scheme: dark) {
     :root {
-      --font-color: #{$fontD};
-      --darker-font-color: #{$fontDarkerD};
-      --background-color: #{$backgroundD};
-      --quote-color: #{$blockquoteD};
+      --font-color: #{v.$fontD};
+      --darker-font-color: #{v.$fontDarkerD};
+      --background-color: #{v.$backgroundD};
+      --quote-color: #{v.$blockquoteD};
     }
     .subtitle, .title, .notice {
-      color: #{$titleD};
+      color: #{v.$titleD};
     }
   }
 
@@ -84,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   font-weight: 600;
   text-decoration: none;
-  color: $link;
+  color: v.$link;
   cursor: pointer;
 }
 a:hover {
@@ -144,9 +147,10 @@ textarea {
 
 button[type="submit"] {
   align-items: center;
-  background-color: $theme;
+  background-color: v.$theme;
   display: inline-flex;
   padding: .5rem 1rem;
+  cursor: pointer;
 
   svg {
     height: 1.5rem;
@@ -164,7 +168,7 @@ button[type="submit"] {
   
   /* Singletons */
   .intro {
-    background-color: $theme;
+    background-color: v.$theme;
     margin: 0 0 2rem;
     padding: 6rem 0 3rem;
     text-align: center;
@@ -230,7 +234,7 @@ button[type="submit"] {
   }
   .emphasis a,
   footer a {
-    color: #57e389;
+    color: v.$emphasis;
   }
   .code-block {
     padding: 0.8rem;
@@ -306,7 +310,7 @@ header {
             width: 24px;
 
             svg {
-                stroke: $link;
+                stroke: v.$link;
                 transition: .4s;
             }
         }
@@ -390,8 +394,8 @@ main {
 
     .caption {
         white-space: nowrap;
-        stroke: $fontDarker;
-        color: $fontDarker;
+        stroke: v.$fontDarker;
+        color: v.$fontDarker;
     }
 }
 
