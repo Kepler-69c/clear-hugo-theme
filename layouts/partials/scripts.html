@@ -5,9 +5,9 @@
 <!-- toggle dark mode -->
 <script>
 // improved and simplified code from https://stackoverflow.com/a/75124760
-document.querySelector('.linkGrid button').addEventListener("click", toggleColorScheme);
+document.querySelector('.linkGrid button[aria-label="darkModeSwitcher"]').addEventListener("click", toggleColorScheme);
 
-// slightly modified: slightly modified
+// send request to change giscus theme
 function changeGiscusTheme (theme) {
   function sendMessage(message) {
     const iframe = document.querySelector('iframe.giscus-frame');
@@ -98,4 +98,13 @@ window.onload = function() {
   applyPreferredColorScheme(startScheme);
   changeGiscusTheme(startScheme);
 }
+</script>
+<!-- toggle menu in mobile mode -->
+<script>
+  const menuBtn =  document.querySelector("button[aria-label='menuToggle']");
+  const menu = document.querySelector(".menu");
+
+ menuBtn.addEventListener("click", () => {
+      menu.classList.toggle('menuOpen');
+  })
 </script>

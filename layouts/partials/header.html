@@ -10,13 +10,17 @@
     <div class="linkGrid">
         <!-- links -->
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+        <a href="{{ .URL | relLangURL }}" class="showDesktop">{{ .Name }}</a>
         {{ end }}
         <!-- theme toggle -->
         {{ if .Site.Params.darkModeToggle }}
-        <button type="button" aria-label="dark mode switcher">
+        <button type="button" aria-label="darkModeSwitcher">
             <i data-feather="sun"></i>
         </button>
         {{ end }}
+        <!-- menu toggle (only for mobile) -->
+        <button class="showMobile" type="button" aria-label="menuToggle">
+            <i data-feather="menu"></i>
+        </button>
     </div>
 </header>

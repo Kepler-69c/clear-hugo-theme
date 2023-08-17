@@ -112,6 +112,9 @@ hr {
   margin: 3em auto;
   color: #333;
 }
+button {
+  cursor: pointer;
+}
 small {
   color: var(--darker-font-color);
 }
@@ -206,6 +209,10 @@ button[type="submit"] {
   .point > p {
     margin: 0.4rem 0 2rem;
   }
+
+  .showMobile {display: none;}
+  .showDesktop {display: block;}
+
   @media screen and (min-width: 660px) {
     .point {
       display: flex;
@@ -420,6 +427,39 @@ article ul {
   }
 }
 
+/* menu */
+
+.menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 4em;
+  background-color: var(--background-color);
+  z-index: 1;
+  height: 0;
+  transition: height .3s;
+  overflow: hidden;
+
+  h1, a {
+    opacity: 0;
+    transition: opacity .3s;
+    display: block;
+  }
+
+  a {
+    margin: .5em 0;
+    font-size: 1.3em;
+  }
+
+  a:hover {text-decoration: underline;}
+}
+
+.menuOpen {
+  height: calc(100vh - 4em);
+  border-bottom: 2px solid var(--theme);
+
+  a, h1 {opacity: 1;}
+}
 
 /* @media */
 
@@ -436,4 +476,7 @@ article ul {
     .emphasis .linkGrid {
       grid-template-columns: repeat(2, minmax(0,1fr));
     }
+
+    .showMobile {display: block;}
+    .showDesktop {display: none;}
 }
