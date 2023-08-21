@@ -24,7 +24,6 @@ minor things (6/10)
 - [x] dark mode icon too big (?)
 - [x] change @import (deprecated) in stylesheet to @use -> switch to dartSass
 - [ ] index.html background dark mode
-- [ ] ~~header box-shadow onScroll~~
 - [ ] revise the date format
 - [ ] fix footnote backlink
 - [x] test if utterances plugin really works

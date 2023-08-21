@@ -1,6 +1,9 @@
 // variables
 @use "variables" as v;
 
+/* TODO: add font to project */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
 @font-face {
     font-family: 'Work Sans';
     src: url('/fonts/worksans-regular.woff2');
@@ -20,6 +23,21 @@
 }
 
 /* Typography */
+:root {
+  --theme: #{v.$theme};
+  --link: #{v.$link};
+
+  --font-color: #{v.$font};
+  --darker-font-color: #{v.$fontDarker};
+  --background-color: #{v.$background};
+  --quote-color: #{v.$blockquote};
+
+  --font-large: 22px;
+  --font-medium: 20px;
+  --font-small: 18px;
+  --font-tiny: 16px;
+}
+
 * {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -28,38 +46,10 @@
   html, body {
     margin: 0;
     padding: 0;
-    font-size: 18px;
+    font-size: var(--font-small);
     font-family: "Work Sans", sans-serif;
     font-weight: 400;
     line-height: 1.6;
-  }
-  @media screen and (min-width: 500px) and (min-height: 500px) {
-    html, body {
-      font-size: 20px;
-    }
-
-    footer {
-        grid-template-columns: auto;
-    }
-  }
-  @media screen and (min-width: 1000px) and (min-height: 800px) {
-    html, body {
-      font-size: 22px;
-    }
-
-    footer {
-        grid-template-columns: auto;
-    }
-  }
-
-  :root {
-    --theme: #{v.$theme};
-    --link: #{v.$link};
-
-    --font-color: #{v.$font};
-    --darker-font-color: #{v.$fontDarker};
-    --background-color: #{v.$background};
-    --quote-color: #{v.$blockquote};
   }
   
   @media (prefers-color-scheme: dark) {
@@ -120,7 +110,7 @@ small {
 }
 blockquote{
   background-color: var(--quote-color);
-  padding: .5em 0 .5em 1em;
+  padding: .5em 1em;
   border-left: 2px solid var(--font-color);
   border-radius: .3rem;
 }
@@ -259,9 +249,13 @@ button[type="submit"] {
   }
   
 /* codeblock, table */
+
 .highlight pre {
   padding: .5em;
   border-radius: .3rem;
+  overflow-y: auto;
+  font-size: var(--font-tiny);
+  font-family: 'Ubuntu Mono', monospace;
 }
 
 table, th, td {
@@ -463,20 +457,37 @@ article ul {
 
 /* @media */
 
-@media screen and (max-width:700px) {
-    footer {
-        grid-template-columns: auto;
-    }
-    .postInfo {
-        flex-wrap: wrap;
-        .caption {
-            margin: 0;
-        }
-    }
-    .emphasis .linkGrid {
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
+@media screen and (min-width: 500px) and (min-height: 500px) {
+  html, body {font-size: var(--font-medium);}
 
-    .showMobile {display: block;}
-    .showDesktop {display: none;}
+  .highlight pre {font-size: var(--font-small);}
+
+  footer {grid-template-columns: auto;}
+}
+
+@media screen and (max-width:700px) {
+  footer {
+      grid-template-columns: auto;
+  }
+  .postInfo {
+    flex-wrap: wrap;
+    
+    .caption {
+        margin: 0;
+    }
+  }
+  .emphasis .linkGrid {
+    grid-template-columns: repeat(2, minmax(0,1fr));
+  }
+
+  .showMobile {display: block;}
+  .showDesktop {display: none;}
+}
+
+@media screen and (min-width: 1000px) and (min-height: 800px) {
+  html, body {font-size: var(--font-large);}
+  
+  .highlight pre {font-size: var(--font-medium);}
+
+  footer {grid-template-columns: auto;}
 }
