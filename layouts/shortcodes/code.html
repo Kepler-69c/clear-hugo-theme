@@ -1,8 +1,0 @@
-<div class="highlight-wrapper" style="position: relative;">
-    <div class="highlight-before" style="position: absolute;bottom: 0;right: 0;">{{ .Get 0 }}</div>
-    {{ if len .Params | eq 2 }}
-        {{ highlight (trim .Inner "\n\r") (.Get 0) (.Get 1) }}
-    {{ else }}
-        {{ highlight (trim .Inner "\n\r") (.Get 0) "" }}
-    {{ end }}
-</div>

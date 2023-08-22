@@ -248,6 +248,8 @@ button[type="submit"] {
     border-radius: 0.3rem;
   }
   
+.hidden {display: none;}
+
 /* codeblock, table */
 
 .highlight pre {
@@ -276,7 +278,6 @@ header {
     width: 100%;
     top: 0;
     color: var(--font-color);
-    // padding: 1em 2em 1em 0;
     padding: 1em 2em;
     z-index: 999999;
     background: var(--background-color);
@@ -285,10 +286,11 @@ header {
     margin-right: auto;
 
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: min-content auto;
 
     .headerLogo {
         line-height: 1;
+        width: fit-content;
         
         img {
             height: 2em;
@@ -297,11 +299,19 @@ header {
 
 
     .linkGrid {
-        display: grid;
-        grid-auto-flow: column;
+        display: flex;
+        flex-direction: row;
         margin-left: auto;
         column-gap: 2em;
         align-items: center;
+
+        #searchInpt {
+          display: none;
+          min-width: 0px;
+          width: 0px;
+          margin-left: 2em;
+          outline: none;
+        }
 
         button {
             background: none;
@@ -320,6 +330,17 @@ header {
             stroke: var(--font-color);
         }
     }
+
+  .linkGridActive {
+    margin-left: initial;
+
+    a {display: none;}
+
+    #searchInpt {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 
 
@@ -461,17 +482,15 @@ article ul {
   html, body {font-size: var(--font-medium);}
 
   .highlight pre {font-size: var(--font-small);}
-
-  footer {grid-template-columns: auto;}
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:700px) and (min-height: 700px) {
   footer {
       grid-template-columns: auto;
   }
   .postInfo {
     flex-wrap: wrap;
-    
+
     .caption {
         margin: 0;
     }
@@ -489,5 +508,4 @@ article ul {
   
   .highlight pre {font-size: var(--font-medium);}
 
-  footer {grid-template-columns: auto;}
 }

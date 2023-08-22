@@ -12,6 +12,14 @@
         {{ range .Site.Menus.main }}
         <a href="{{ .URL | relLangURL }}" class="showDesktop">{{ .Name }}</a>
         {{ end }}
+        <!-- search toggle -->
+        {{ if .Site.Params.enableSearch }}
+        <input type="text" name="searchInpt" id="searchInpt" placeholder="Search...">
+        <button type="button" aria-label="searchToggle">
+            <i data-feather="search"></i>
+            <i data-feather="x" class="hidden"></i>
+        </button>
+        {{ end }}
         <!-- theme toggle -->
         {{ if .Site.Params.darkModeToggle }}
         <button type="button" aria-label="darkModeSwitcher">
@@ -24,3 +32,4 @@
         </button>
     </div>
 </header>
+

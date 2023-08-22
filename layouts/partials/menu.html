@@ -1,8 +1,17 @@
-<div class="menu showMobile">
+<div class="menu showMobile" usage="menu">
     <div class="container">
         <h1>Navigation</h1>
         {{ range .Site.Menus.main }}
         <a href="{{ .URL | relLangURL }}">{{ .Name }}</a>
         {{ end }}
+    </div>
+</div>
+
+<div class="menu" usage="search">
+    <div class="container">
+        <h1>Results</h1>
+        <div class="searchResults">
+
+        </div>
     </div>
 </div>

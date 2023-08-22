@@ -2,7 +2,7 @@
 Clear is a minimalist monolingual hugo theme.
 
 ## TODO (for v1.0)
-important (11/15)
+important (12/15)
 - [x] dark mode button
 - [x] comment section for posts
 - [x] footer links
@@ -14,7 +14,7 @@ important (11/15)
     - [x] fix image scaling & size
 - [x] custom post icons
 - [x] improve table and blockquote style
-- [ ] improve codeblock style
+- [x] improve codeblock style
 - [ ] search
 - [x] header to menu on mobile
 - [x] custom accent colors
@@ -22,7 +22,7 @@ important (11/15)
 minor things (6/10)
 - [x] footer > social > hover effect
 - [x] dark mode icon too big (?)
-- [x] change @import (deprecated) in stylesheet to @use -> switch to dartSass
+- [x] sass: change @import (deprecated) to @use -> switch to dartSass
 - [ ] index.html background dark mode
 - [ ] revise the date format
 - [ ] fix footnote backlink
@@ -44,3 +44,6 @@ minor things (6/10)
 | Giscus     | ✔︎           | ✔︎      |
 | Disqus     | ✔︎           | ✔︎      |
 | Utterances | ✔︎           | ✔︎      |
+
+---
+'usage=""'

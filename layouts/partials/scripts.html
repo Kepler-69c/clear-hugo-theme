@@ -52,7 +52,7 @@ function toggleColorScheme() {
 
 // Change the scheme icon
 function changeSchemeIcon(scheme) {
-  const schemeSVG = document.querySelector(".linkGrid button svg");
+  const schemeSVG = document.querySelector(".linkGrid button[aria-label='darkModeSwitcher'] svg");
   schemeSVG.innerHTML = scheme === "dark" ? feather.icons.sun.toSvg() : feather.icons.moon.toSvg();
 }
 
@@ -102,7 +102,7 @@ window.onload = function() {
 <!-- toggle menu in mobile mode -->
 <script>
   const menuBtn =  document.querySelector("button[aria-label='menuToggle']");
-  const menu = document.querySelector(".menu");
+  const menu = document.querySelector(".menu[usage='menu']");
 
  menuBtn.addEventListener("click", () => {
       menu.classList.toggle('menuOpen');
