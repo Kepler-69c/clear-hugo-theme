@@ -460,13 +460,11 @@ article ul {
     transition: opacity .3s;
     display: block;
   }
+}
 
-  a {
-    margin: .5em 0;
-    font-size: 1.3em;
-  }
-
-  a:hover {text-decoration: underline;}
+.menu[usage="menu"] a {
+  margin: .5em 0;
+  font-size: 1.3em;
 }
 
 .menuOpen {
@@ -474,6 +472,14 @@ article ul {
   border-bottom: 2px solid var(--theme);
 
   a, h1 {opacity: 1;}
+}
+
+.menu[usage="search"] a:focus { /* for keyboard search navigation */
+    padding: .2em .5em;
+    background: var(--link);
+    border-radius: .3rem;
+    color: white;
+    outline:none;
 }
 
 /* @media */

@@ -11,11 +11,11 @@ important (12/15)
     - [x] list subtitle/explanation
 - [ ] responsive, lazy loaded images
     - [ ] image captions
-    - [x] fix image scaling & size
+    - [ ] fix image scaling & size
 - [x] custom post icons
 - [x] improve table and blockquote style
 - [x] improve codeblock style
-- [ ] search
+- [x] search
 - [x] header to menu on mobile
 - [x] custom accent colors
 
