@@ -21,6 +21,7 @@
     {{ $styleVars := dict
       "accentcolor" "#AAAEEE"
       "accentemphasis" "#676dc7"
+      "imgcounters" "false"
     }}
     
     {{ if isset .Site.Params.style "accentcolor" }}
@@ -29,6 +30,10 @@
 
     {{ if isset .Site.Params.style "accentemphasis" }}
       {{ $styleVars = merge $styleVars (dict "accentemphasis" .Site.Params.style.accentemphasis) }}
+    {{ end }}
+
+    {{ if isset .Site.Params.style "imgcounters" }}
+      {{ $styleVars = merge $styleVars (dict "imgcounters" .Site.Params.style.imgcounters) }}
     {{ end }}
 
     <!-- css stylesheets -->

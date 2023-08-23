@@ -114,10 +114,27 @@ blockquote{
   border-left: 2px solid var(--font-color);
   border-radius: .3rem;
 }
-.image {
-  display: block;
-  width: 100%;
-  border-radius: 0.3rem;
+
+figure {
+  margin: 1em 0;
+
+  img {
+    max-width: 100%;
+    border-radius: 0.3rem;
+
+    margin: auto 0;
+  }
+
+  figcaption {
+    color: var(--darker-font-color);
+  }
+
+  figcaption::before {
+    @if v.$imgCounters == "true" {
+      counter-increment: section; /* Increment the value of section counter by 1 */
+      content: "Fig" counter(section) ". "; /* Display counter value in default style (decimal) */
+    }
+  }
 }
 
 /* inputs */ 
