@@ -1,12 +1,15 @@
-// short code for dark mode, that listens to a button and to the theme change of the browser
-// features:
+// modified from https://gist.github.com/Kepler-69c/2395eafefa7199db79c70a0028f5a5f4
+// # efficient & short dark mode in JavaScript
+// short js snippet for dark mode, that listens to a button and to the theme change of the browser
+
+// ## Features:
 // - save preferred theme in localstorage until preferred theme and browser theme maches
-// - change theme at page load
+// - changes theme at page load
 // - short and efficient, without css classes or custom styles
 // - works with all modern browsers:
-//   - Chromium [Chrome, Brave, Edge, Opera]
-//   - Firefox
-//   - Safari [Epiphany]
+//   - :white_check_mark: Chromium [Chrome, Brave, Edge, Opera]
+//   - :white_check_mark: Firefox
+//   - :white_check_mark: Safari [Epiphany]
 
 // button listener
 document.querySelector('.linkGrid button[aria-label="darkModeSwitcher"]').addEventListener("click", () => changeScheme('button'));
@@ -20,22 +23,28 @@ window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", sc
 function getPreferred() {
   const systemScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   const chosenScheme = localStorage.getItem("scheme") || systemScheme;
-  if (systemScheme === chosenScheme) {
-    localStorage.removeItem("scheme");
-  }
-  return chosenScheme;
+  if (systemScheme === chosenScheme) localStorage.removeItem("scheme");
+  return [chosenScheme, systemScheme];
+}
+
+// Change the button icon
+function changeIcon(scheme) {
+  const schemeSVG = document.querySelector(".linkGrid button[aria-label='darkModeSwitcher'] svg");
+  schemeSVG.innerHTML = scheme === "dark" ? feather.icons.sun.toSvg() : feather.icons.moon.toSvg();
 }
 
 // change system scheme and set localStorage
 function changeScheme(reason) {
+  if (reason == "browser" && scheme == getPreferred()[1]) return;
   scheme = (scheme === 'dark') ? 'light' : 'dark';
-  if (reason == "button") {localStorage.setItem("scheme", scheme)};
-  // console.log(scheme);
+  if (reason == "button") localStorage.setItem("scheme", scheme);
+  changeIcon(scheme);
   document.documentElement.setAttribute('data-theme', scheme);
 }
 
 // if needed, change scheme on start
 window.onload = () => {
-  scheme = getPreferred();
+  scheme = getPreferred()[0];
+  changeIcon(scheme);
   document.documentElement.setAttribute('data-theme', scheme);
 }

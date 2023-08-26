@@ -54,12 +54,11 @@ html, body {
 }
 
 [data-theme="dark"] {
-/*  :root {*/
     --font-color: #{v.$fontD};
     --darker-font-color: #{v.$fontDarkerD};
     --background-color: #{v.$backgroundD};
     --quote-color: #{v.$blockquoteD};
-  /*}*/
+    
   .subtitle, .title, .notice {
     color: #{v.$titleD};
   }
