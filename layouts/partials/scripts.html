@@ -2,103 +2,21 @@
 <script>
     feather.replace();
 </script>
+
+<!-- init search -->
+{{ if .Site.Params.enableSearch }}
+    {{ $fuse := resources.Get "js/fuse.min.js" }}
+    {{ $search := resources.Get "js/search.js" }}
+
+    {{ $concatjs := slice $fuse $search | resources.Concat "js/scripts.js" | resources.Minify | fingerprint }}
+    <script src="{{ $concatjs.Permalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{ end }}
+
 <!-- toggle dark mode -->
-<script>
-// improved and simplified code from https://stackoverflow.com/a/75124760
-document.querySelector('.linkGrid button[aria-label="darkModeSwitcher"]').addEventListener("click", toggleColorScheme);
+{{ with resources.Get "js/darkmode.js" | minify | fingerprint }}
+<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>
+{{ end }}
 
-// send request to change giscus theme
-function changeGiscusTheme (theme) {
-  function sendMessage(message) {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (!iframe) return;
-    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-  }
-
-  sendMessage({
-    setConfig: {
-      theme: theme
-    }
-  });
-}
-
-// get the systems color scheme
-function getPreferredColorScheme() {
-  const systemScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  const chosenScheme = localStorage.getItem("scheme") || systemScheme;
-  if (systemScheme === chosenScheme) {
-    localStorage.removeItem("scheme");
-  }
-  return chosenScheme;
-}
-
-// save preferred color scheme to local storage
-function savePreferredColorScheme(scheme) {
-  const systemScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  if (systemScheme === scheme) {
-    localStorage.removeItem("scheme");
-  } else {
-    localStorage.setItem("scheme", scheme);
-  }
-}
-
-// toggle the current color scheme
-function toggleColorScheme() {
-  // const newScheme = getPreferredColorScheme() === "light" ? "dark" : "light";
-  // changeSchemeIcon(newScheme);
-  // applyPreferredColorScheme(newScheme);
-  // savePreferredColorScheme(newScheme);
-}
-
-// Change the scheme icon
-function changeSchemeIcon(scheme) {
-  const schemeSVG = document.querySelector(".linkGrid button[aria-label='darkModeSwitcher'] svg");
-  schemeSVG.innerHTML = scheme === "dark" ? feather.icons.sun.toSvg() : feather.icons.moon.toSvg();
-}
-
-// apply the scheme by traversing the stylesheet rules, and applying a medium
-function applyPreferredColorScheme(scheme) {
-  for (let s = 0; s < document.styleSheets.length; s++) {
-    if (!(document.styleSheets[s].href).includes("clear_sass")) {
-      continue;
-    } else {
-
-      const rules = document.styleSheets[s].cssRules;
-
-      for (let i = 0; i < rules.length; i++) {
-        const rule = rules[i];
-        if (rule && rule.media && rule.media.mediaText.includes("prefers-color-scheme")) {
-          switch (scheme) {
-            case "light":
-              rule.media.appendMedium("original-prefers-color-scheme");
-              if (rule.media.mediaText.includes("light")) rule.media.deleteMedium("(prefers-color-scheme: light)");
-              if (rule.media.mediaText.includes("dark")) rule.media.deleteMedium("(prefers-color-scheme: dark)");
-              break;
-            case "dark":
-              rule.media.appendMedium("(prefers-color-scheme: light)");
-              rule.media.appendMedium("(prefers-color-scheme: dark)");
-              if (rule.media.mediaText.includes("original")) rule.media.deleteMedium("original-prefers-color-scheme");
-              break;
-            default:
-              rule.media.appendMedium("(prefers-color-scheme: dark)");
-              if (rule.media.mediaText.includes("light")) rule.media.deleteMedium("(prefers-color-scheme: light)");
-              if (rule.media.mediaText.includes("original")) rule.media.deleteMedium("original-prefers-color-scheme");
-              break;
-          }
-        }
-      }
-    }
-  }
-  changeGiscusTheme(scheme);
-}
-
-window.onload = function() {
-  const startScheme = getPreferredColorScheme();
-  changeSchemeIcon(startScheme);
-  applyPreferredColorScheme(startScheme);
-  changeGiscusTheme(startScheme);
-}
-</script>
 <!-- toggle menu in mobile mode -->
 <script>
   const menuBtn =  document.querySelector("button[aria-label='menuToggle']");

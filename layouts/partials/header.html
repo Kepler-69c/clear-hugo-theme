@@ -32,13 +32,3 @@
         </button>
     </div>
 </header>
-
-{{ if .Site.Params.enableSearch }}
-    {{ with resources.Get "js/fuse.min.js" }} <!--  | minify integrity="{{ .Data.Integrity }}" -->
-    <script src="{{ .RelPermalink }}"></script>
-    {{ end }}
-
-    {{ with resources.Get "js/search.js" }} <!--  | minify integrity="{{ .Data.Integrity }}" -->
-    <script src="{{ .RelPermalink }}"></script>
-    {{ end }}
-{{ end }}

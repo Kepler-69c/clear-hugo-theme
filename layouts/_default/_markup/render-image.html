@@ -1,8 +1,8 @@
 <figure>
     {{ if .Title }}
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
     <figcaption>{{ .Title }}</figcaption>
     {{ else }}
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}">
+    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy">
     {{ end }}
 </figure>
