@@ -27,6 +27,15 @@ function getPreferred() {
   return [chosenScheme, systemScheme];
 }
 
+// set giscus theme
+function changeGiscus (theme) {
+  function sendMessage(message) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+  }
+  sendMessage({ setConfig: { theme:theme } });
+}
+
 // Change the button icon
 function changeIcon(scheme) {
   const schemeSVG = document.querySelector(".linkGrid button[aria-label='darkModeSwitcher'] svg");
@@ -39,12 +48,14 @@ function changeScheme(reason) {
   scheme = (scheme === 'dark') ? 'light' : 'dark';
   if (reason == "button") localStorage.setItem("scheme", scheme);
   changeIcon(scheme);
+  changeGiscus(scheme);
   document.documentElement.setAttribute('data-theme', scheme);
 }
 
 // if needed, change scheme on start
 window.onload = () => {
   scheme = getPreferred()[0];
-  changeIcon(scheme);
   document.documentElement.setAttribute('data-theme', scheme);
+  changeIcon(scheme);
+  changeGiscus(scheme);
 }

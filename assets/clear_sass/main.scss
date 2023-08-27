@@ -58,7 +58,7 @@ html, body {
     --darker-font-color: #{v.$fontDarkerD};
     --background-color: #{v.$backgroundD};
     --quote-color: #{v.$blockquoteD};
-    
+
   .subtitle, .title, .notice {
     color: #{v.$titleD};
   }
@@ -73,6 +73,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
   font-weight: 900;
   line-height: 1.25;
+}
+sup, a, li, h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 200px;
 }
 a {
   font-weight: 600;
