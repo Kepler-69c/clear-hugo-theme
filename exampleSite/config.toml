@@ -1,0 +1,97 @@
+baseURL = 'https://clear.netlify.app/'
+metaDataFormat = "yaml"
+languageCode = 'en-us'
+title = 'Clear Hugo Theme'
+theme = "clear"
+
+DefaultContentLanguage = "en"
+DefaultContentLanguageInSubdir = false
+
+[params]
+  introTitle = "Clear."
+  introSubtitle = "A minimalist hugo theme"
+  description = "A minimalist hugo theme"
+  logo = "/clear.svg"
+  favicon = "/clear.svg"
+  author = "Your Name"
+
+  startYear = 2022
+  location = "Hermiston, Oregon"
+
+  darkModeToggle = true
+  enableSearch = true
+
+  hideMeta = false
+  hideSummary = false
+  hideOtherLanguages = false
+  hideComments = false
+
+[params.style]
+accentcolor = "hsl(142°, 62%, 47%)"
+accentemphasis = "hsl(142°, 63%, 38%)"
+
+[params.comments]
+  system = "giscus"
+  giscusRepo = "Kepler-69c/giscus_djordjep"
+  giscusRepoid = "R_kgDOJ0TAhQ"
+  giscusCategory = "General"
+  giscusCategoryid = "DIC_kwDOJ0TAhc4CXe2U"
+  giscusMapping = "pathname"
+  giscusStrict = "1"
+  giscusReactionsenabled = "1"
+  giscusEmitmetadata = "0"
+  giscusInputposition = "bottom"
+  giscusTheme = "light"
+
+[params.homepage.social] 
+  [[params.homepage.social.icons]]
+    website = "dribbble"
+    url = "https://gohugo.io/"
+  [[params.homepage.social.icons]]
+    website = "twitter"
+    url = "https://twitter.com/gohugoio" 
+  [[params.homepage.social.icons]]
+    website = "github"
+    url = "https://github.com/gohugoio/hugo"
+  [[params.homepage.social.icons]]
+    website = "github"
+    url = "https://github.com/Kepler-69c/clear-hugo-theme"
+
+# main menu and footer links
+  [[menu.main]]
+    name = "Blog"
+    url = "blog"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+    # now the footer menu  
+  [[menu.footer]]
+    name = "About"
+    url = "/about"
+    weight = 1
+
+  [[menu.footer]]
+    name = "Tags"
+    url = "tags"
+    weight = 2
+
+  [[menu.footer]]
+    name = "link"
+    url = "/"
+    weight = 3
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark.renderer]
+    unsafe = true 
