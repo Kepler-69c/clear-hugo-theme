@@ -1,0 +1,3 @@
+[submodule "clear"]
+	path = themes/clear
+	url = https://github.com/Kepler-69c/clear-hugo-theme.git
