@@ -19,7 +19,7 @@ Clear is a minimalist monolingual Hugo theme.
 
 ### Preview
 -> [Demo](https://clear-hugo.netlify.app)
-![demo page screenshot](exampleSite/static/Screenshot from 2023-09-04.png)
+![demo page screenshot](exampleSite/static/Screenshot-2023-09-04.png)
 
 ### Use the theme
 First, add the theme to the main `config` file of your site (example: config.toml):
