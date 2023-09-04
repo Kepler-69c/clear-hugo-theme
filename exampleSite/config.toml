@@ -1,4 +1,4 @@
-baseURL = 'https://clear.netlify.app/'
+baseURL = 'https://clear-hugo.netlify.app/'
 metaDataFormat = "yaml"
 languageCode = 'en-us'
 title = 'Clear Hugo Theme'
