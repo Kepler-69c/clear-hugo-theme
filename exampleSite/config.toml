@@ -13,7 +13,10 @@ DefaultContentLanguageInSubdir = false
   description = "A minimalist hugo theme"
   logo = "/clear.svg"
   favicon = "/clear.svg"
-  author = "Your Name"
+
+  [params.author]
+    name = "Your Name"
+    email = 'Your@Email'
 
   startYear = 2022
   location = "Hermiston, Oregon"

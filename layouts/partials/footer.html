@@ -16,7 +16,7 @@
               {{ .Site.Params.copyright | safeHTML }}
             {{ else }}
               © {{ .Site.Params.startYear }}-{{ dateFormat "2006" now }}
-              {{ .Site.Params.author }}.
+              {{ .Site.Params.author.name }}.
             {{ end }}
             {{ if (isset .Site.Params "location") }}
               <br> Built in {{ .Site.Params.location }}.
