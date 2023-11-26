@@ -2,7 +2,7 @@
 @use "variables" as v;
 
 /* TODO: add font to project */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 @font-face {
     font-family: 'Work Sans';
@@ -48,7 +48,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: var(--font-small);
-  font-family: "Work Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -114,8 +114,8 @@ small {
 blockquote{
   background-color: var(--quote-color);
   padding: .5em 1em;
-  border-left: 2px solid var(--font-color);
-  border-radius: .3rem;
+  // border-left: 2px solid var(--font-color);
+  // border-radius: .3rem;
 }
 
 figure {
@@ -123,7 +123,7 @@ figure {
 
   img {
     max-width: 100%;
-    border-radius: 0.3rem;
+    // border-radius: 0.3rem;
 
     margin: auto 0;
   }
