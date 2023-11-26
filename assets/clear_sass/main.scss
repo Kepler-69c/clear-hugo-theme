@@ -36,6 +36,11 @@
   --font-medium: 20px;
   --font-small: 18px;
   --font-tiny: 16px;
+
+  --green: #{v.$green};
+  --orange: #{v.$orange};
+  --blue: #{v.$blue};
+  --red: #{v.$red};
 }
 
 * {
@@ -501,6 +506,38 @@ article ul {
     color: white;
     outline:none;
 }
+
+/* note shortcode */
+.note {
+  background-color: var(--quote-color);
+  padding: .5em 1em;
+
+  .note-title {
+    display: flex;
+    gap: .5em;
+    flex-direction: row;
+    font-weight: bold;
+
+    span, svg {
+      line-height: 1em;
+    }
+  }
+}
+
+.note-warning {
+  background-color: var(--red);
+}
+.note-info{
+  background-color: var(--orange);
+
+}
+.note-note{
+  background-color: var(--blue);
+}
+.note-tip {
+  background-color: var(--green);
+}
+
 
 /* @media */
 

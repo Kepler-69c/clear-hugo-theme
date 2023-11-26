@@ -1,0 +1,20 @@
+<!-- 
+- available note types: warning, info, note, tip
+- copied partly from http://github.com/martignoni/hugo-notice - this shortcode is licensed under the GPL-3.0 license:
+    - gnu.org/licenses/gpl-3.0.en.html
+-->
+{{ $classMap := dict "warning" "alert-triangle" "info" "info" "note" "alert-circle" "tip" "check-circle" }}
+{{- $noticeType := .Get 0 | default "note" -}}
+{{- $title := .Get 1 | default $noticeType -}}
+{{ $classValue := index $classMap (lower $noticeType) }}
+
+<!-- Workaround markdownify inconsistency for single/multiple paragraphs -->
+{{- $raw := (markdownify .Inner | chomp) -}}
+{{- $block := findRE "(?is)^ <(?:address|article|aside|blockquote|canvas|dd|div|dl|dt|fieldset|figcaption|figure|footer|form|h(?:1|2|3|4|5|6)|header|hgroup|hr|li|main|nav|noscript|ol|output|p|pre|section|table|tfoot|ul|video)\\b" $raw 1 -}}
+    <div class="note note-{{ $noticeType }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}>
+        <p class="note-title">
+            <i data-feather="{{ $classValue }}"></i>
+            <span>{{- $title -}}</span>
+        </p>
+        {{- if or $block (not $raw) }}{{ $raw }}{{ else }}<p>{{ $raw }}</p>{{ end -}}
+    </div>
